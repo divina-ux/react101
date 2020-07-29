@@ -10,15 +10,16 @@ class App extends Component{
       notes: [
         {
           id: 1,
-          text: 'Paint an illustration.'
+
+          text: 'try and finish before 3:30pm'
         },
         {
           id: 2,
-          text: 'Draw a user interface.'
+          text: 'change the pink background its getting stale'
         },
         {
           id: 3,
-          text: 'App maker festival.'
+          text: 'list item 3'
         },
         {
           id: 4,
@@ -26,7 +27,7 @@ class App extends Component{
         },
         {
           id: 5,
-          text: 'Instrument recording, mixing.'
+          text: 'Go home'
         }
       ],
       noteInputValue : ''
@@ -60,7 +61,7 @@ class App extends Component{
 
 
     var filteredNotes = notes.filter((item)=>{
-      return item.id != noteIdToDelete
+      return item.id !== noteIdToDelete
     })
 
     this.setState({notes:filteredNotes})
@@ -71,7 +72,7 @@ class App extends Component{
     return (
       <div className="wrap">
         <div className="container">
-          <h1>Hello<br />This is your to-do list.</h1>
+          <h1>Hello User<br />Try and do something today :)</h1>
           <div className="notes">
   
             {

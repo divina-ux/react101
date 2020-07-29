@@ -1,31 +1,32 @@
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css';
 body{
-	background: repeating-linear-gradient(
-		45deg,
-	  	rgba(255,105,180,0.1),
-	  	rgba(255,105,180,0.1) 1em,
-	  	rgba(255,105,180,0.2) 1em,
-	 	rgba(255,105,180,0.2) 2em
-	);
+	background-color: #242424;
 	min-height: 100vh;
 }
+
 .notes{
 	display: flex;
 	flex-wrap: wrap;
+	margin-right: 40%;
 }
+
 .note{
-	flex: 0 0 12em;
-	border:thin rgb(255,105,180) solid;
+	flex: 0 0 80%;
+	border:thin rgb(51, 152, 128) solid;
 	border-radius: 0.5em;
-	margin:1em;
-	background-color: #fff;
+	margin-top: 2.3em;
+	background-color: rgba(108, 108, 108, 0.342);
 	position: relative;
+	min-width: 100%;
+	color: whitesmoke;
+	
+	
 }
 .note:after{
 	content:'';
 	display: block;
-	padding-top: 100%;
+	padding-top: 10%;
 }
 .note-body{
 	position: absolute;
@@ -37,19 +38,28 @@ body{
 	box-sizing: border-box;
 }
 .note-remove{
-	color: rgb(255,105,180);
+	color: rgb(51, 152, 128);
 	font-size: 1em;
 	position: absolute;
 	top:0.5em;
 	right:0.5em;
 }
+
+
 .btn-primary{
-	background-color: rgb(255,105,180);
-	border-color:rgb(255,105,180);
+	background-color: rgb(51, 152, 128);
+	border-color:rgb(51, 152, 128);
 
 }
 .form-control:focus{
-	border-color:rgb(255,105,180);
+	border-color:rgb(51, 152, 128);
 	box-shadow: none;
 }
 
+.new-note {
+	padding: 1em;
+}
+
+h1 {
+	color: aliceblue;
+}
