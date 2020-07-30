@@ -7,64 +7,56 @@ class App extends Component{
     super(props)
 
     this.state = {
-      notes: [
+      todo: [
         {
           id: 1,
 
-          text: 'try and finish before 3:30pm'
+          text: 'get lunch'
         },
         {
           id: 2,
-          text: 'change the pink background its getting stale'
+          text: 'stream some ranked valorant'
         },
         {
           id: 3,
-          text: 'list item 3'
-        },
-        {
-          id: 4,
           text: 'Dua Lipa Auckland concert.'
         },
-        {
-          id: 5,
-          text: 'Go home'
-        }
       ],
-      noteInputValue : ''
+      todoInputValue : ''
     }
   
   }
 
-  handleNoteInputChange = (e)=>{
-    this.setState({noteInputValue:e.target.value})
+  handletodoInputChange = (e)=>{
+    this.setState({todoInputValue:e.target.value})
     
   }
 
   handleAddButtonClick = (e)=>{
     e.preventDefault()
-    var note = {
+    var todo = {
       id:Date.now(),
-      text:this.state.noteInputValue
+      text:this.state.todoInputValue
     }
 
-    var newNotes = [note, ...this.state.notes]
+    var newtodo = [todo, ...this.state.todo]
 
     this.setState({
-      notes:newNotes,
-      noteInputValue : ''
+      todo:newtodo,
+      todoInputValue : ''
     })
   }
 
-  handleNoteDelete = (e)=>{
-    var noteIdToDelete = parseInt(e.target.id)
-    var notes = this.state.notes
+  handletodoDelete = (e)=>{
+    var todoIdToDelete = parseInt(e.target.id)
+    var todo = this.state.todo
 
 
-    var filteredNotes = notes.filter((item)=>{
-      return item.id !== noteIdToDelete
+    var filteredtodo = todo.filter((item)=>{
+      return item.id !== todoIdToDelete
     })
 
-    this.setState({notes:filteredNotes})
+    this.setState({todo:filteredtodo})
   }
 
 
@@ -72,34 +64,36 @@ class App extends Component{
     return (
       <div className="wrap">
         <div className="container">
-          <h1>Hello User<br />Try and do something today :)</h1>
-          <div className="notes">
+          <h1>Hello stonye<br />Try and do something today 🤔</h1>
+          <div className="todo">
+          <div className="todo new-todo">
+                  <div className="form-group">
+                      <label htmlFor="todo-input">
+                          Add a new todo
+                      </label>
+                  </div>
+                      <div className="group-flex">
+                      <input type="text" className="form-control" id="todo-input" placeholder="got something to do?" value={this.state.todoInputValue} onChange={this.handletodoInputChange} />
+                      <button type="submit" className="btn btn-primary" onClick={this.handleAddButtonClick}> Add </button>
+                    </div>  
+              </div>
   
             {
-              this.state.notes.map(note=>{
+              this.state.todo.map(todo=>{
                 return (
-                  <div className="note" key={note.id}>
-                    <div className="note-body">
-                      <i id={note.id} className="far fa-times-circle note-remove" onClick={this.handleNoteDelete} ></i>
-                      <div className="note-text">
-                      {note.text}
-                      </div>
-                    </div>
-                  </div>
-              )
-            })
-          }
-  
-              <div className="note new-note">
-                  <div className="form-group">
-                      <label htmlFor="note-input">
-                          Add a new note
-                      </label>
-                      <input type="text" className="form-control" id="note-input" value={this.state.noteInputValue} onChange={this.handleNoteInputChange} />
-                  </div>
-  
-                  <button type="submit" className="btn btn-primary" onClick={this.handleAddButtonClick}> Add </button>
-              </div>
+                        
+                        <div className="todo" key={todo.id}>
+                          <div className="todo-body">
+                            <i id={todo.id} className="far fa-times-circle todo-remove" onClick={this.handletodoDelete} ></i>
+                            <div className="todo-text">
+                            {todo.text}
+                            </div>
+                          </div>
+                        </div>
+                      )
+                })
+            }
+
           </div>
         </div>
       </div>

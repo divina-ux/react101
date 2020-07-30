@@ -1,65 +1,116 @@
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css';
 body{
-	background-color: #242424;
+	background-color: #f25e5e;
 	min-height: 100vh;
 }
 
-.notes{
+/* 
+	$font-bodytext:'Montserrat', sans-serif;
+	$font-decor: 'Abel', sans-serif;
+	$font-header:'Abril Fatface', cursive;
+
+	$main-color:#5F5BD9;
+	$dark-color:#393073;
+	$light-color:#CBAEF2; 
+*/
+
+::selection{
+	background-color: #322073;
+}
+
+.container{
+	width: 70%;
+	max-height: 50vh;
+}
+
+.todos{
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: 40%;
 }
 
-.note{
+.todo{
 	flex: 0 0 80%;
-	border:thin rgb(51, 152, 128) solid;
 	border-radius: 0.5em;
-	margin-top: 2.3em;
-	background-color: rgba(108, 108, 108, 0.342);
+	margin-top: 1.5em;
+	padding-right: 4em;
 	position: relative;
 	min-width: 100%;
-	color: whitesmoke;
-	
+	color: #322073;
+	font-family: 'Abel', sans-serif;
 	
 }
-.note:after{
+.todo:after{
 	content:'';
 	display: block;
 	padding-top: 10%;
 }
-.note-body{
+.todo-body{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top:0;
 	left:0;
-	padding:1em;
+	padding-top:1.2em;
+	padding-left:3em;
 	box-sizing: border-box;
+	border-radius: 0.5em;
+	background-color: whitesmoke;
 }
-.note-remove{
-	color: rgb(51, 152, 128);
-	font-size: 1em;
+.todo-remove{
+	color: #322073;
+	font-size: 1.6em;
 	position: absolute;
-	top:0.5em;
-	right:0.5em;
+	top:0.8em;
+	left:0.5em;
 }
 
 
 .btn-primary{
-	background-color: rgb(51, 152, 128);
-	border-color:rgb(51, 152, 128);
+	background-color: #322073;
+	border-color: rgba(238, 238, 238, 0);
+}
+
+.btn-primary:hover{
+	background-color: #322073;
 
 }
+
+.form-control{
+	background-color: rgba(238, 238, 238, 0);
+	border: 0;
+	border-bottom: thin solid #322073;
+	border-radius: 0;
+	width: 30%;
+	color: #322073;
+	transition: ease-in-out 0.6s;
+}
+
 .form-control:focus{
-	border-color:rgb(51, 152, 128);
+	border-color:#322073;
 	box-shadow: none;
+	background-color: rgba(238, 238, 238, 0);
+	color: #322073;
+	width: 60%;
 }
 
-.new-note {
+.new-todo {
 	padding: 1em;
+	border-radius: 0.5em;
+	background-color: whitesmoke;
+	font-family: 'Abel', sans-serif;
 }
 
 h1 {
-	color: aliceblue;
+	color: whitesmoke;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.group-flex{
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;
+	
 }
